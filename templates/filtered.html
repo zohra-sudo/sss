@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Image</title>
+</head>
+<body>
+    <h1>Filtered Image</h1>
+    <p>Original Image:</p>
+    <img src="{{ url_for('static', filename='uploads/' + original) }}" alt="Original">
+    
+    <p>Gray Filtered Image:</p>
+    <img src="{{ url_for('static', filename=gray) }}" alt="Gray Filtered">
+    
+    <p>Blurred Filtered Image:</p>
+    <img src="{{ url_for('static', filename=blurred) }}" alt="Blurred Filtered">
+    
+    <a href="/upload">Upload Another Image</a>
+</body>
+</html>

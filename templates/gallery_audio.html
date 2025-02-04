@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Audio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+<body>
+    <h1>Galerie Audio</h1>
+
+    <ul>
+        {% for audio in audio_files %}
+            <li>
+                <p>{{ audio }}</p>
+                <audio controls>
+                    <source src="{{ url_for('static', filename='audio/' + audio) }}" type="audio/mpeg">
+                </audio>
+                <a href="{{ url_for('play_audio', filename=audio) }}">Écouter sur une page</a>
+            </li>
+        {% else %}
+            <p>Aucun fichier audio disponible.</p>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{{ url_for('home') }}">Retour à l'accueil</a>
+</body>
+</html>

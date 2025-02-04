@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Art Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Section avec l'image de fond et le texte superposé -->
+    <div class="hero-section">
+        <img src="{{ url_for('static', filename='image/font.jpg') }}" alt="Gallery Image" class="hero-image">
+        <div class="hero-text">
+            <h1>Welcome to the Interactive Art Gallery</h1>
+            
+        </div>
+    </div>
+
+    <!-- Conteneur des boutons -->
+    <div class="button-container">
+        <a href="{{ url_for('gallery') }}"><button>View Image Gallery</button></a>
+        <a href="{{ url_for('upload') }}"><button>Upload Image</button></a>
+        <a href="{{ url_for('data_viz') }}"><button>View Data Visualizations</button></a>
+        <a href="{{ url_for('upload_audio') }}"><button>Upload Audio</button></a>
+        <a href="{{ url_for('gallery_audio') }}"><button>View Audio Gallery</button></a>
+    </div>
+</body>
+</html>
+
+
